@@ -1,0 +1,109 @@
+/*common*/
+
+[class^='contsec']{float:left;width:50%;}
+.container{max-width:1200px;margin:0 auto}
+.wrap{overflow-y:auto;}
+.wrap:after{content:"";display:block;clear:both}
+.sec{/*min-height:800px;*/padding:30px 0;margin-top:55px;}
+
+/*navi*/
+header{}
+header.slide {background-color: rgba(0,0,0,.5);visiblity:hidden;z-index:-1;opacity: 0;}
+img{width:100%}
+.backWhite{background-color:white;display:block}
+#hd{ text-align:center /*인라인요소 가운데정렬*/;}
+#hd:after{content:"";display:block;clear:both}
+#hd  h1{float:left;margin-top:-15px;margin-left:5px}
+#hd  .top_gnb{ overflow:hidden /* 컨텐츠보호*/;height:35px;margin:0 auto;padding:25px 0;text-align:left;position:fixed;left:20%;z-index:100;transition:0.8s}
+#hd  .top_gnb  a{ display:block}
+#hd   h1  a{ display:block}
+#hd   h1  img{width:70%}
+#hd  .right{ float:right; overflow:hidden;margin-top:10px;padding: 5px 0;}
+#hd  .right  li{ float:left;border-left:1px solid black;}
+/*
+#hd  .top_gnb  li+li{border-left:1px solid black;height:15px}
+#hd  .top_gnb  li:not(:first-child){border-left:1px solid black;height:15px}
+*/
+#hd  .top_gnb  li:first-child{border-left-width:0}
+#hd  .right  a{padding:0 15px;line-height:80%;float:left}
+
+#hd  #gnb {} 
+#hd  #gnb  a{ display:block}
+#gnb { display:inline-block /*li들의 너비와 높이를 그대로 인식 */; *display:block; zoom:1;position:relative;z-index:10}
+#gnb  a{}
+#gnb > li{ float:left;position:relative;margin: 10px 40px;
+}
+#gnb > li >a{padding-bottom:15px;border-bottom:#FFF solid 2px;font-weight:bold;font-size:18px}
+#gnb .d2{position:absolute;width:120px;text-align:left !important;margin:0 auto;height:0;overflow:hidden;transition:0.5s;padding-top:20px}
+#gnb .dd2{height:0;font-size:12px;}
+#gnb .dd2 li{text-indent:10px}
+#gnb .d2 li{display:inline-block}
+#gnb .d2 a{padding-bottom:10px;}
+
+#gnb .d2  a:hover{text-decoration:underline;}
+#gnb:hover .d2{height:180px}
+.bgBox{position: absolute;
+    width: 100%;
+    margin-left: 143px;
+    background-color:white;
+    height: 0;
+    margin-top: -22px;
+	border-bottom:1px solid #ccc;
+    transition: 0.5s;}
+#gnb:hover + .bgBox{height:170px;}
+
+#gnb li:hover >a{border-bottom-color:#000}
+
+.top_gnb.scroll{top:calc(100% - 80px);}
+
+/*모바일네비*/
+.mobile_size{display:none;height:40px; position:relative;}
+/*overflow:hidden를 대신 쓸 수 없다. 자식노드 중에 abs가 있으므로*/
+.mobile_size:after{ content:""; display:block; clear:both}
+.mobile_size h1{ float:left}
+.mobile_size aside{ float:right; }
+#toggle{ display:none}
+#toggle + label{ display:block; width:40px;}
+#toggle + label  span{ display:block; height:3px; margin:3px; background-color:black }
+#gnb_m{position:absolute; width:100%; left:100%; top:41px; 
+background-color:#ccc; transition:0.5s;}
+#toggle:checked + label + #gnb_m{left:0;}
+
+
+/*contents*/
+#adsec{}
+.error p{font-size:22px;text-align:center;font-weight:bold}
+.error:after{content:"";display:block;clear:both}
+
+
+.contsec1{margin-top:0}
+.contsec2{margin-top:0}
+.man{text-align:center;font-size:1.5em}
+.woman{text-align:center;font-size:1.5em}
+.contsec3{}
+
+#latestBox{ position:fixed; bottom:20px; right:20px; z-index:1000; overflow:hidden}
+
+.box, #top{ float:left; background-color:black;}
+.box{margin-right:1px;  padding:8px;}
+.box ul{ overflow:hidden; float:left; } 
+.box ul li{ float:left; width:50px; background-color:white; height:50px; margin-right:1px; 
+position:relative} 
+.box ul li span{ display:none; 
+position:absolute; width:10px; height:10px; font-size:9px; background-color:#036; color:white; top:0; right:0; line-height:10px; cursor:pointer}
+.box ul li:hover span{ display:block}
+
+.box ul li a{ display:block}
+.box ul li img{ width:100%; max-width:500px /*실사이즈*/}
+.box input[type='submit']{ float:left; width:50px; height:50px; background-color:white; }
+#top{ border:none; color:white; width:66px; height:66px; margin-right:-66px; transition:0.5s}
+#top.show{ margin-right:0}
+
+@media only screen and (max-width: 1375px) {
+	#hd  .top_gnb{left:0;}
+}
+@media only screen and (max-width: 1150px) {
+	#hd  .top_gnb{width:100%}
+	#gnb, .right{display:none}
+	.mobile_size{display:block;float:right}
+}

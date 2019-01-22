@@ -1,0 +1,51 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body{ margin:0; padding:0}
+.owl-carousel{ position:relative}
+.owl-carousel .owl-nav{ position:absolute; height:0; width:100%; top:50%; z-index:100 }
+.owl-carousel .owl-nav button.owl-prev, 
+.owl-carousel .owl-nav button.owl-next{color:black;display: block;width: 30px;font-size: 25px; transform:translateY(-50%); font-family:'Nanum Gothic'}
+.owl-carousel .owl-nav button.owl-prev{ float:left}
+.owl-carousel .owl-nav button.owl-next{ float:right}
+.owl-dots{ position:absolute; bottom:20px; width:100%; text-align:center }
+.owl-carousel button.owl-dot{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px;}
+
+.owl-carousel .owl-dots span {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: 0 0;
+    border: 1px solid rgba(255,255,255,0);
+    position: relative;
+		    border-radius: 10px;
+
+}
+
+
+
+.owl-carousel .owl-dots span:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.owl-carousel .owl-dots .owl-dot.active span {
+    background: 0 0;
+    border: 1px solid white;
+}
+.owl-stage{  min-width: 100%;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;}
